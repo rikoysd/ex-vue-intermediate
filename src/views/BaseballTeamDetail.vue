@@ -5,6 +5,7 @@
     <div class="list">本拠地</div>
     {{ team.headquarters }}
     <div class="list">発足日</div>
+    {{ team.formatString }}
     <div class="list">歴史</div>
     {{ team.history }}
   </div>

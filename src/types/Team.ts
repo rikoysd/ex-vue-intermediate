@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 /**
  * 野球チームを表す部品用のクラス.
  */
@@ -9,58 +11,53 @@ export class Team {
     private _teamName: string,
     // 本拠地
     private _headquarters: string,
-    // 本拠地
+    // 発足日
     private _inauguration: Date,
     // 歴史
     private _history: string
-  ){}
+  ) {}
 
-    public get id(): number
- {
-        return this._id;
-    }
+  public get formatString(): string {
+    return format(this._inauguration, "yyyy年MM月dd日");
+  }
 
-    public set id(id: number
-) {
-        this._id = id;
-    }
+  public get id(): number {
+    return this._id;
+  }
 
-    public get teamName(): string
- {
-        return this._teamName;
-    }
+  public set id(id: number) {
+    this._id = id;
+  }
 
-    public set teamName(teamName: string
-) {
-        this._teamName = teamName;
-    }
+  public get teamName(): string {
+    return this._teamName;
+  }
 
-    public get headquarters(): string
- {
-        return this._headquarters;
-    }
+  public set teamName(teamName: string) {
+    this._teamName = teamName;
+  }
 
-    public set headquarters(headquarters: string
-) {
-        this._headquarters = headquarters;
-    }
+  public get headquarters(): string {
+    return this._headquarters;
+  }
 
-    public get inauguration(): Date
- {
-        return this._inauguration;
-    }
+  public set headquarters(headquarters: string) {
+    this._headquarters = headquarters;
+  }
 
-    public set inauguration(inauguration: Date
-) {
-        this._inauguration = inauguration;
-    }
+  public get inauguration(): Date {
+    return this._inauguration;
+  }
 
-    public get history(): string {
-        return this._history;
-    }
+  public set inauguration(inauguration: Date) {
+    this._inauguration = inauguration;
+  }
 
-    public set history(history: string) {
-        this._history = history;
-    }
+  public get history(): string {
+    return this._history;
+  }
 
- }
+  public set history(history: string) {
+    this._history = history;
+  }
+}
