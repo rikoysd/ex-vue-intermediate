@@ -24,7 +24,7 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/BaseballTeamList.vue')
   },
   {
-    path: '/baseballTeamDetail',
+    path: '/baseballTeamDetail/:id',
     name: 'About',
     component: () => import('../views/BaseballTeamDetail.vue')
   }

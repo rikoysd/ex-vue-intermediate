@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="list">球団名</div>
     {{ currentTeam.teamName }}
     <div class="list">本拠地</div>
@@ -7,7 +7,7 @@
     <div class="list">発足日</div>
     {{ currentTeam.formatString }}
     <div class="list">歴史</div>
-    {{ currentTeam.history }}
+    <pre>{{ currentTeam.history }}</pre><br>
     <button type="button" v-on:click="onclick">戻る</button>
   </div>
 </template>
@@ -35,4 +35,11 @@ export default class BaseballTeamDetail extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  text-align: left;
+}
+.list {
+  font-weight: bold;
+}
+</style>
