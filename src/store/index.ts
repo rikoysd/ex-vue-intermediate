@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { Team } from "@/types/BaseballTeam";
+import { Team } from "@/types/Team";
 import { Hotel } from "@/types/Hotel";
 import { Clothe } from "@/types/Clothe";
 
