@@ -22,6 +22,11 @@ const routes: Array<RouteConfig> = [
     path: '/baseballTeamList',
     name: 'About',
     component: () => import('../views/BaseballTeamList.vue')
+  },
+  {
+    path: '/baseballTeamDetail',
+    name: 'About',
+    component: () => import('../views/BaseballTeamDetail.vue')
   }
 ]
 
