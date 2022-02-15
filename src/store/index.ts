@@ -153,9 +153,19 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   getters: {
+    /**
+     * チーム一覧を返す.
+     * @param state ステート
+     * @returns チーム一覧
+     */
     getteams(state) {
       return state.teams;
     },
+    /**
+     * IDからチームを1件検索し返す.
+     * @param state ステート
+     * @returns チームオブジェクト
+     */
     getteamById(state) {
       return (id: number): Team => {
         return state.teams.filter((team) => team.id === id)[0];
