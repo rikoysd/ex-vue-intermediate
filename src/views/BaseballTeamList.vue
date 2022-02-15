@@ -17,7 +17,7 @@ import { Team } from "@/types/Team";
 @Component
 export default class BaseballTeamList extends Vue {
   /**
-   * チーム一覧を取得し返す.
+   * Vuexストア内のチーム一覧を取得し返す.
    * @returns チーム一覧
    */
   get getteams(): Array<Team> {
