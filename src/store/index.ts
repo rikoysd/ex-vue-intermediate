@@ -152,5 +152,10 @@ export default new Vuex.Store({
   }, // end state
   mutations: {},
   actions: {},
+  getters: {
+    getTeamList(state) {
+      return state.teams.length;
+    },
+  },
   modules: {},
 });
