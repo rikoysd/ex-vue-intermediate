@@ -1,26 +1,33 @@
 <template>
-  <div>
+  <div class="container">
     <h1>野球チーム一覧</h1>
-    <div>
-      <router-link>読売ジャイアンツ</router-link>
-      <router-link>阪神タイガース</router-link>
-      <router-link>中日ドラゴンズ</router-link>
-      <router-link>横浜DeNAベイスターズ</router-link>
-      <router-link>広島東洋カープ</router-link>
-      <router-link>東京ヤクルトスワローズ</router-link>
-    </div>
+    <table>
+      <tr v-for="team of teams" v-bind:key="team.id">
+        <router-link :to="'/baseballTeamDetail' + team.id">{{
+          team.teamName
+        }}</router-link>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { Team } from "@/types/Team";
 @Component
 export default class BaseballTeamList extends Vue {
-  
-
+  /**
+   * チーム一覧を取得し返す.
+   * @returns チーム一覧
+   */
+  get getteams(): Array<Team> {
+    return this.$store.getters.getteams;
+  }
 }
 </script>
 
 <style scoped>
-
+.container {
+  text-align: left;
+}
 </style>
