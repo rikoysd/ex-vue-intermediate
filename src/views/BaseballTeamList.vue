@@ -2,7 +2,7 @@
   <div class="container">
     <h1>野球チーム一覧</h1>
     <table>
-      <tr v-for="team of teams" v-bind:key="team.id">
+      <tr v-for="team of getteams" v-bind:key="team.id">
         <router-link :to="'/baseballTeamDetail' + team.id">{{
           team.teamName
         }}</router-link>

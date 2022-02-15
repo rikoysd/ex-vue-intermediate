@@ -154,7 +154,7 @@ export default new Vuex.Store({
   actions: {},
   getters: {
     getteams(state) {
-      return state.teams.length;
+      return state.teams;
     },
   },
   modules: {},
