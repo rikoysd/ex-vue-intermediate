@@ -156,6 +156,11 @@ export default new Vuex.Store({
     getteams(state) {
       return state.teams;
     },
+    getteamById(state) {
+      return (id: number): Team => {
+        return state.teams.filter((team) => team.id === id)[0];
+      };
+    },
   },
   modules: {},
 });
