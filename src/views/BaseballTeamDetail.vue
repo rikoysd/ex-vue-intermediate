@@ -18,6 +18,14 @@ import { Team } from "@/types/Team";
 @Component
 export default class BaseballTeamDetail extends Vue {
   private currentTeam = new Team(0, "", "", new Date(), "");
+
+  /**
+   * Vuexストア内のGetter経由で受け取ったリクエストパラメータのIDから1件のチーム情報を取得する.
+   */
+  created(): void {
+    const teamId = Number(this.$route.params.id);
+    this.currentTeam = this.$store.getters.getteamById(teamId);
+  }
   /**
    * 戻るボタンを押すとチーム一覧に遷移する.
    */
