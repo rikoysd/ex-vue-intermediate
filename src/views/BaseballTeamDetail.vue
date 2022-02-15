@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="list">球団名</div>
-    {{ team.teamName }}
+    {{ currentTeam.teamName }}
     <div class="list">本拠地</div>
-    {{ team.headquarters }}
+    {{ currentTeam.headquarters }}
     <div class="list">発足日</div>
-    {{ team.formatString }}
+    {{ currentTeam.formatString }}
     <div class="list">歴史</div>
-    {{ team.history }}
+    {{ currentTeam.history }}
     <button type="button" v-on:click="onclick">戻る</button>
   </div>
 </template>
@@ -15,10 +15,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Team } from "@/types/Team";
-import { Hotel } from "@/types/Hotel";
-import { Clothe } from "@/types/Clothe";
 @Component
 export default class BaseballTeamDetail extends Vue {
+  private currentTeam = new Team(0, "", "", new Date(), "");
+  /**
+   * 戻るボタンを押すとチーム一覧に遷移する.
+   */
   onclick(): void {
     this.$router.push("/baseballTeamList");
   }
