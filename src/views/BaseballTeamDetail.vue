@@ -8,6 +8,7 @@
     {{ team.formatString }}
     <div class="list">歴史</div>
     {{ team.history }}
+    <button type="button" v-on:click="onclick">戻る</button>
   </div>
 </template>
 
@@ -17,7 +18,11 @@ import { Team } from "@/types/Team";
 import { Hotel } from "@/types/Hotel";
 import { Clothe } from "@/types/Clothe";
 @Component
-export default class BaseballTeamDetail extends Vue {}
+export default class BaseballTeamDetail extends Vue {
+  onclick(): void {
+    this.$router.push("/baseballTeamList");
+  }
+}
 </script>
 
 <style scoped></style>
